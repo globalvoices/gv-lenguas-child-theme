@@ -812,64 +812,49 @@ if (isset($gv) AND is_object($gv)) :
 	 * Sponsors definition to be used by gv_get_sponsors()
 	 */
 	$gv->sponsors = array(
-		'avina' => array(
-			"name" => "Avina",
-			"slug" => "avina",
-			'description' => 'Avina is a Latin American foundation that identifies opportunities to achieve systemic change relevant for sustainable development, by connecting and empowering people and institutions in shared agendas for action.',
-			"url" => "http://www.avina.net/eng/",
+		'omidyar' => array(
+			"name" => "Omidyar Network",
+			"slug" => "omidyar",
+			'description' => 'Omidyar Network - Every person has the power to make a difference.',
+			"url" => "http://www.omidyar.com/",
 			'status' => 'featured',
 			),
-		'avina-americas' => array(
-			"name" => "Avina Americas",
-			"slug" => "avina-americas",
-			'description' => 'Avina Americas\' mission is to impact sustainable development in Latin America and beyond by engaging U.S. actors in shared strategies for action which contribute to the common good. ',
-			"url" => "http://http://www.avinaamericas.org/",
-			'status' => 'featured',
+		'hivos' => array(
+			"name" => "Hivos",
+			"slug" => "hivos",
+			"description" => 'Hivos, the Humanist Institute for Development Cooperation',
+			"url" => "http://www.hivos.org/",
+			"status" => 'featured',
+			),		
+		'knight' => array(
+			"name" => "Knight Foundation",
+			"slug" => "knight",
+			"description" => 'John S. and James L. Knight Foundation',
+			"url" => "http://www.knightfdn.org/",
+			"status" => 'featured',
 			),
-		'skoll' => array(
-			"name" => "Skoll Foundation",
-			"slug" => "skoll",
-			'description' => 'The Skoll Foundation invests in, connects, and celebrates social entrepreneurs and the innovators who help them solve the world’s most pressing problems.',
-			"url" => "http://www.skollfoundation.org/",
-			'status' => 'featured',
+		'fpu' => array(
+			"name" => "Free Press Unlimited",
+			"slug" => "fpu",
+			"description" => 'Free Press Unlimited - People Deserve to Know',
+			"url" => "http://www.freepressunlimited.org/",
+			"status" => 'featured',
 			),
-//		'hivos' => array(
-//			"name" => "Hivos",
-//			"slug" => "hivos",
-//			"description" => 'Hivos, the Humanist Institute for Development Cooperation',
-//			"url" => "http://www.hivos.org/",
-//			"status" => 'featured',
-//			),		
-//		'knight' => array(
-//			"name" => "Knight Foundation",
-//			"slug" => "knight",
-//			"description" => 'John S. and James L. Knight Foundation',
-//			"url" => "http://www.knightfdn.org/",
-//			"status" => 'featured',
-//			),
-//		'fpu' => array(
-//			"name" => "Free Press Unlimited",
-//			"slug" => "fpu",
-//			"description" => 'Free Press Unlimited - People Deserve to Know',
-//			"url" => "http://www.freepressunlimited.org/",
-//			"status" => 'featured',
-//			),
-//		'osi' => array(
-//			"name" => "Open Society Institute",
-//			"slug" => "osi",
-//			"description" => 'Open Society Institute - Building vibrant and tolerant democracies.',
-//			"url" => "http://www.soros.org/",
-//			"status" => 'featured',
-//			),
-//		'heinrichboll' => array(
-//			"name" => "Heinrich Böll Stiftung",
-//			"slug" => "heinrichboll",
-//			"description" => 'Heinrich Böll Stiftung - Striving to promote democracy, civil society, equality and a healthy environment internationally.',
-//			"url" => "http://www.boell.org/",
-//			"status" => 'featured',
-//			),
+		'osi' => array(
+			"name" => "Open Society Institute",
+			"slug" => "osi",
+			"description" => 'Open Society Institute - Building vibrant and tolerant democracies.',
+			"url" => "http://www.soros.org/",
+			"status" => 'featured',
+			),
+		'heinrichboll' => array(
+			"name" => "Heinrich Böll Stiftung",
+			"slug" => "heinrichboll",
+			"description" => 'Heinrich Böll Stiftung - Striving to promote democracy, civil society, equality and a healthy environment internationally.',
+			"url" => "http://www.boell.org/",
+			"status" => 'featured',
+			),
 	);
-
 	/**
 	 * Define badgeset arrays for use with [gvbadges id="$slug"] shortcode
 	 */
