@@ -24,6 +24,11 @@ Template: gv-project-theme
 	width: 480px;
 	max-width: 480px;
 }
+/*Full-width widget with no heading*/
+.homepage_intro-container {
+	margin-top: 1.5rem;
+}
+
 @media only screen and (max-width: 1032px) {
 	.site-title-container {
 		 max-width: 360px !important;
@@ -31,6 +36,10 @@ Template: gv-project-theme
 	.site-title-image {
 		 width: 360px;
 		 max-width: 360px;
+	}
+	.homepage_intro-container big {
+		font-size: 1rem;
+		font-size: 16px;
 	}
 }
 @media only screen and (max-width: 552px) {
@@ -45,6 +54,7 @@ Template: gv-project-theme
 		 display:none;
 	}
 }
+
 #RED-TEXT,
 .header-tools .menu-toggle,
  .header-nav-bar-container .header-nav-bar a,
@@ -95,6 +105,7 @@ a:hover,
 }
 
 #BLACK-TEXT,
+h3,
 .header-container,
 .header-mission-statement,
 .black-text {
