@@ -10,3 +10,132 @@ Template: gv-project-theme
 */
 
 @import url("../gv-project-theme/style.css");
+
+.wpcf7-textarea {width: 90%;}
+
+.site-title-text {
+	white-space:normal;
+	line-height:1.1;
+}
+.site-title-container {
+	max-width:480px ;
+}
+.site-title-image {
+	width: 480px;
+	max-width: 480px;
+}
+@media only screen and (max-width: 1032px) {
+	.site-title-container {
+		 max-width: 360px !important;
+	}
+	.site-title-image {
+		 width: 360px;
+		 max-width: 360px;
+	}
+}
+@media only screen and (max-width: 552px) {
+	.site-title-container {
+		max-width: 240px !important;
+	}
+	.site-title-image {
+		 width: 240px;
+		 max-width: 300px;
+	}
+	.header .site-subscribe-icons{
+		 display:none;
+	}
+}
+#RED-TEXT,
+.header-tools .menu-toggle,
+ .header-nav-bar-container .header-nav-bar a,
+ a,
+h3 a,
+a,
+.menu-opened .menu-toggle,
+.menu-toggle:hover,
+.site-subscribe-icons a,
+.taxonomy-list-header-opened .taxonomy-list-toggle,
+.screen-title a:hover,
+.taxonomy-list a:hover,
+.taxonomy-tabs-container .term-union-link a,
+.post-description a:hover,
+.meta-term-subterms .active-term a,
+.share-links-icons .icon:hover,
+#comments #respond #commentform a:hover,
+.warning a
+.red-text {
+	color: #BA3D1B; /*red*/
+}
+#LIGHT-RED-TEXT,
+ .header-nav-bar-container .header-nav-bar a:hover,
+#page-navigation a,
+a:hover,
+.edit a,
+.post-terms-taxonomy a,
+#comments .edit a,
+#cancel-comment-reply-link,
+#page-navigation a:hover,
+.error,
+.edit a:hover,
+#comments .edit a:hover,
+#cancel-comment-reply-link:hover,
+.warning a:hover
+.light-red-text {
+	color: #EF4618;	
+	}
+#RED-BACKGROUND,
+.header-container .site-search input[type='submit'],
+.red-background {
+	background-color: #BA3D1B;
+}
+#RED-OUTLINE,
+.header-container .site-search input,
+.red-outline {
+	outline: 1px solid #BA3D1B;
+}
+
+#BLACK-TEXT,
+.header-container,
+.header-mission-statement,
+.black-text {
+	color: #000;
+}
+
+
+#BEIGE-BACKGROUND,
+.header-container,
+.header-nav-bar-container,
+.beige-background {
+	background-color: #E4D5BC;
+}
+#BEIGE-HIGHLIGHT-BORDER,
+.header-menu li,
+.header-menu-container input,
+.header-tools .menu-toggle,
+.beige-hightlight-border {
+	border-color: #D5C5AA;
+}
+#NO-TEXT-SHADOW,
+.header-mission-statement,
+.header-mission-statement a,
+.header-container,
+.header-nav-bar-container,
+.header-nav-bar-container a,
+.no-text-shadow {
+	/*color: #fff;*/
+text-shadow: none;
+	}
+
+#NO-TEXT-SHADOW,
+.header-container .menu-opened .toggle-menu-heading,
+.header-container .toggle-menu-content,
+.header-container .active-item a,
+.no-text-shadow {
+	text-shadow: none;
+}	
+
+#LINK-BOLDNESS, 
+.header-mission-statement a,
+.link-boldness {
+	font-weight: bold;
+}
