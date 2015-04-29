@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions.php file for GV Microgrants Child Theme
+ * Functions.php file for GV Lenguas Child Theme
  *
  * Assumes parent is gv-project-theme.
  * This code will run before the functions.php in that theme.
