@@ -738,7 +738,7 @@ if (isset($gv) AND is_object($gv)) :
 	 * @return string desired icon
 	 */
 	function gvadvocacy_theme_gv_og_image_default($icon) {
-		return gv_get_dir('theme_images') ."rv-logo-square-600.png";
+		return gv_get_dir('theme_images') ."lenguas-fb-logo-1200x631.png";
 	}
 	add_filter('gv_og_image_default', 'gvadvocacy_theme_gv_og_image_default');
 	
