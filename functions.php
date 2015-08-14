@@ -9,6 +9,11 @@
 if (isset($gv) AND is_object($gv)) :
 
 	/**
+	 * Disable automatic plugin activation from parent theme. We need this theme to work in MU
+	 */
+	define('GV_NO_DEFAULT_PLUGINS', TRUE);
+
+	/**
 	 * Define GV_LINGUA as false to override the TRUE definition in the projects theme 
 	 */
 	if (!defined('GV_LINGUA'))
