@@ -860,6 +860,22 @@ if (isset($gv) AND is_object($gv)) :
 			"status" => 'featured',
 			),
 	);
+	
+	/**
+	 * Filter gv_post_archive_hide_dates to hide them on hoempage
+	 * @param type $limit
+	 * @param type $args
+	 * @return int
+	 */
+	function lenguas_gv_post_archive_hide_dates($hide_dates) {
+		if (is_home() AND !is_paged())
+			return true;
+		
+		return $hide_dates;
+	}
+	add_filter('gv_post_archive_hide_dates', 'lenguas_gv_post_archive_hide_dates', 10);
+		
+	
 	/**
 	 * Define badgeset arrays for use with [gvbadges id="$slug"] shortcode
 	 */
