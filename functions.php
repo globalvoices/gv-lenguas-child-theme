@@ -411,7 +411,7 @@ if (isset($gv) AND is_object($gv)) :
 		 */
 		// Unregister defaults as they aren't useful for this site
 		gv_unregister_public_taxonomy('category');
-		gv_unregister_public_taxonomy('post_tag');	
+//		gv_unregister_public_taxonomy('post_tag');	
 		
 		/**
 		 * "Regions" taxonomy based on parentless members of gv_geo
