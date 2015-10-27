@@ -187,7 +187,7 @@ function gv_microgrants_lenguas_2015_custom_metadata_manager_admin_init() {
 	 */
 	x_add_metadata_field( 'proposal-otherresources', array('post'), array(
 		'group' => 'gv_custom_metadata_posts',
-		'label' => 'Además de la financiación de microbecas, ¿qué otro tipo de apoyo considera que  Rising Voices pueda brindar a  su proyecto para garantizar su éxito?',
+		'label' => '¿Qué apoyo, capacitación u otros recursos necesitaría tu comunidad para participar en la promoción de políticas públicas relacionadas con las lenguas nativas?',
 		'field_type' => 'textarea',
 	));
 	/**
@@ -432,7 +432,7 @@ function gv_microgrants_lenguas_2015_register_postmeta_inserts() {
 	));
 	gv_register_postmeta_insert(array(
 		'postmeta_field_name' => 'proposal-otherresources',
-		'label' => 'Además de la financiación de microbecas, ¿qué otro tipo de apoyo considera que  Rising Voices pueda brindar a  su proyecto para garantizar su éxito?',
+		'label' => '¿Qué apoyo, capacitación u otros recursos necesitaría tu comunidad para participar en la promoción de políticas públicas relacionadas con las lenguas nativas?',
 		'position' => 'bottom',
 	));
 	gv_register_postmeta_insert(array(
