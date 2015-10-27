@@ -20,6 +20,13 @@ if (isset($gv) AND is_object($gv)) :
 		define('GV_LINGUA',  TRUE);
 	
 	/**
+	 * Register Lenguas 2015 microgrants questions
+	 * 
+	 * Should only apply to posts in lenguas-2015 category, so it should be fine to leave it here indefinitely
+	 */
+	include_once('gv-microgrants-questions-lenguas-2015.php');
+	
+	/**
 	 * For geo mashup plugin show excerpts instead of thumbnails
 	 */
 //	add_filter('gv_geo_mashup_show_thumbnail', '__return_false');
