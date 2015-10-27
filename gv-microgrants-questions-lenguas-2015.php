@@ -163,7 +163,7 @@ function gv_microgrants_lenguas_2015_custom_metadata_manager_admin_init() {
 	 */
 	x_add_metadata_field( 'proposal-impact', array('post'), array(
 		'group' => 'gv_custom_metadata_posts',
-		'label' => 'Por favor, selecciona uno de estos desafíos que tu proyecto desea abordar y propón actividades concretas o pasos a seguir para empezar a superar este desafío.',
+		'label' => '¿Cómo vas a medir y evaluar el impacto de este proyecto teniendo en cuenta concretamente a los participantes?',
 		'field_type' => 'textarea',
 	));	
 	/**
