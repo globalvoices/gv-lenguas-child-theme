@@ -417,7 +417,7 @@ function gv_microgrants_lenguas_2015_register_postmeta_inserts() {
 	));
 	gv_register_postmeta_insert(array(
 		'postmeta_field_name' => 'proposal-impact',
-		'label' => 'Por favor, selecciona uno de estos desafíos que tu proyecto desea abordar y propón actividades concretas o pasos a seguir para empezar a superar este desafío.',
+		'label' => '¿Cómo vas a medir y evaluar el impacto de este proyecto teniendo en cuenta concretamente a los participantes?',
 		'position' => 'bottom',
 	));
 	gv_register_postmeta_insert(array(
