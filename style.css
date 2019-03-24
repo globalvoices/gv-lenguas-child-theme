@@ -55,15 +55,11 @@ Template: gv-project-theme
 	}
 }
 
-#RED-TEXT,
-.header-tools .menu-toggle,
- .header-nav-bar-container .header-nav-bar a,
- a,
-h3 a,
+#TERRACOTTA-TEXT,
 a,
+h3 a,
 .menu-opened .menu-toggle,
 .menu-toggle:hover,
-.site-subscribe-icons a,
 .taxonomy-list-header-opened .taxonomy-list-toggle,
 .screen-title a:hover,
 .taxonomy-list a:hover,
@@ -73,11 +69,11 @@ a,
 .share-links-icons .icon:hover,
 #comments #respond #commentform a:hover,
 .warning a
-.red-text {
+.terracotta-text {
 	color: #BA3D1B; /*red*/
+	color: #B5540E; /*terracotta*/
 }
-#LIGHT-RED-TEXT,
- .header-nav-bar-container .header-nav-bar a:hover,
+#LIGHT-TERRACOTTA-TEXT,
 #page-navigation a,
 a:hover,
 .edit a,
@@ -90,42 +86,61 @@ a:hover,
 #comments .edit a:hover,
 #cancel-comment-reply-link:hover,
 .warning a:hover
-.light-red-text {
+.light-terracotta-text {
 	color: #EF4618;	
+	color: #de7f3c; /*terracotta*/
 	}
-#RED-BACKGROUND,
-.header-container .site-search input[type='submit'],
-.red-background {
-	background-color: #BA3D1B;
-}
-#RED-OUTLINE,
-.header-container .site-search input,
-.red-outline {
-	outline: 1px solid #BA3D1B;
-}
-
-#BLACK-TEXT,
-h3,
-.header-container,
-.header-mission-statement,
-.black-text {
-	color: #000;
-}
-
-
-#BEIGE-BACKGROUND,
+#TERRACOTTA-BACKGROUND,
 .header-container,
 .header-nav-bar-container,
-.beige-background {
-	background-color: #E4D5BC;
+.terracotta-background {
+	background-color: #E4D5BC; /*OLD BEIGE*/
+	background-color: #B5540E;
 }
-#BEIGE-HIGHLIGHT-BORDER,
+#TERRACOTTA-BACKGROUND,
+.header-container,
+.header-nav-bar-container,
+.terracotta-background {
+	background-color: #E4D5BC; /*OLD BEIGE*/
+	background-color: #B5540E;
+}
+#DARK-TERRACOTTA-BACKGROUND,
+.header-container .site-search input[type='submit'],
+.dark-terracotta-background {
+	background-color: #BA3D1B; /*OLD RED*/
+	background-color: #712f00;
+}
+#DARK-TERRACOTTA-OUTLINE,
+.header-container .site-search input,
+.dark-terracotta-outline {
+	outline: 1px solid #BA3D1B; /*OLD RED*/
+	outline: 1px solid #712f00;
+}
+#DARK-TERRACOTTA-HIGHLIGHT-BORDER,
+.header-container .site-search input,
 .header-menu li,
 .header-menu-container input,
 .header-tools .menu-toggle,
-.beige-hightlight-border {
-	border-color: #D5C5AA;
+.dark-terracotta-hightlight-border { 
+	border-color: #D5C5AA; /*OLD BEIGE*/
+	border-color: #712f00;
 }
+#BLACK-TEXT,
+h3,
+.black-text {
+	color: #000;
+}
+#WHITE-TEXT,
+.header-container .header-mission-statement a,
+.header-mission-statement,
+.site-subscribe-icons a,
+.header-tools .toggle-menu.menu-closed .menu-toggle,
+/*.header-nav-bar-container .header-nav-bar a,*/
+ .header-nav-bar-container .header-nav-bar a:hover,
+.white-text {
+	color: #ffffff;
+}
+
 #NO-TEXT-SHADOW,
 .header-mission-statement,
 .header-mission-statement a,
@@ -149,4 +164,5 @@ text-shadow: none;
 .header-mission-statement a,
 .link-boldness {
 	font-weight: bold;
+	text-decoration: underline;
 }
