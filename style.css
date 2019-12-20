@@ -71,13 +71,12 @@ h3 a,
 .warning a
 .terracotta-text {
 	color: #BA3D1B; /*red*/
-	color: #B5540E; /*terracotta*/
+	color: #c1250e; /*terracotta*/
 }
 #LIGHT-TERRACOTTA-TEXT,
 #page-navigation a,
 a:hover,
 .edit a,
-.post-terms-taxonomy a,
 #comments .edit a,
 #cancel-comment-reply-link,
 #page-navigation a:hover,
@@ -88,21 +87,14 @@ a:hover,
 .warning a:hover
 .light-terracotta-text {
 	color: #EF4618;	
-	color: #de7f3c; /*terracotta*/
+	color: #ef290c; /*terracotta*/
 	}
 #TERRACOTTA-BACKGROUND,
 .header-container,
 .header-nav-bar-container,
 .terracotta-background {
 	background-color: #E4D5BC; /*OLD BEIGE*/
-	background-color: #B5540E;
-}
-#TERRACOTTA-BACKGROUND,
-.header-container,
-.header-nav-bar-container,
-.terracotta-background {
-	background-color: #E4D5BC; /*OLD BEIGE*/
-	background-color: #B5540E;
+	background-color: #B63421;
 }
 #DARK-TERRACOTTA-BACKGROUND,
 .header-container .site-search input[type='submit'],
@@ -114,7 +106,7 @@ a:hover,
 .header-container .site-search input,
 .dark-terracotta-outline {
 	outline: 1px solid #BA3D1B; /*OLD RED*/
-	outline: 1px solid #712f00;
+	outline: 1px solid #942515;
 }
 #DARK-TERRACOTTA-HIGHLIGHT-BORDER,
 .header-container .site-search input,
@@ -123,7 +115,7 @@ a:hover,
 .header-tools .menu-toggle,
 .dark-terracotta-hightlight-border { 
 	border-color: #D5C5AA; /*OLD BEIGE*/
-	border-color: #712f00;
+	border-color: #942515;
 }
 #BLACK-TEXT,
 h3,
