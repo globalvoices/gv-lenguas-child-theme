@@ -11,6 +11,43 @@ Template: gv-project-theme
 
 @import url("../gv-project-theme/style.css");
 
+/*Custom font stuff for Noto Sans JP overhaul*/
+
+/*Use Noto Sans black and make it condensed*/
+#ENORMOUS-TEXT,
+.SEE-media-queries-group-must-match,
+h2.screen-title,
+.cycled-feature h3,
+.enormous-text {
+	font-weight: 900;
+	letter-spacing: -1px;
+}
+/*More line height for noto regular in entries*/
+#LINE-HEIGHT-ONE-AND-QUARTER-LINE,
+.full-article .entry,
+.line-height-one-and-quarter-line {
+	line-height: 30px;
+	line-height: 1.875rem;
+}
+/*Make WAY more things use 1.25 instead of 1.125*/
+#LINE-HEIGHT-ONEPOINTTWOFIVE-REM,
+.author-block .username,
+.headline-title,
+
+/*Additions!*/
+.post-archive .entry,
+.full-article .post-summary .entry,
+.widget .excerpt-text,
+#geo-mashup .excerpt-entry,
+.special-coverage-pages .excerpt-text,
+.author-block .post-count,
+.custom-listing-header-text,
+.gv-stats input,
+.line-height-onepointonetwofive-rem {
+	line-height: 20px;
+	line-height: 1.25rem;
+}
+
 .wpcf7-textarea {width: 90%;}
 
 .site-title-text {
