@@ -6,6 +6,28 @@
  * This code will run before the functions.php in that theme.
  */
 
+/**
+ * Register fonts for GV Project Theme
+ * 
+ * @global GV_Theme_Fonts $gv_theme_fonts
+ */
+function gv_lenguas_register_theme_fonts() {
+	global $gv_theme_fonts;
+	
+	if (!is_a($gv_theme_fonts, 'GV_Theme_Fonts'))
+		 return;
+	
+	/**
+	 * Import CSS: Load Noto Sans various weights for testing 
+	 */
+	$gv_theme_fonts->update_import_css('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap" rel="stylesheet">');
+	
+	$gv_theme_fonts->update_group_font_family('headings', "'Noto Sans JP', sans-serif");
+	$gv_theme_fonts->update_group_font_family('default', "'Noto Sans JP', sans-serif");
+	$gv_theme_fonts->update_group_font_family('article', "'Noto Sans JP', sans-serif");
+}
+add_action('after_setup_theme', 'gv_lenguas_register_theme_fonts');
+
 if (isset($gv) AND is_object($gv)) :
 
 	/**
