@@ -22,9 +22,11 @@ function gv_lenguas_register_theme_fonts() {
 	 */
 	$gv_theme_fonts->update_import_css('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap" rel="stylesheet">');
 	
-	$gv_theme_fonts->update_group_font_family('headings', "'Noto Sans JP', sans-serif");
-	$gv_theme_fonts->update_group_font_family('default', "'Noto Sans JP', sans-serif");
-	$gv_theme_fonts->update_group_font_family('article', "'Noto Sans JP', sans-serif");
+	$font_stack = "'Noto Sans JP', 'Roboto', 'Helvetica Neue', sans-serif";
+	
+	$gv_theme_fonts->update_group_font_family('headings',$font_stack);
+	$gv_theme_fonts->update_group_font_family('default', $font_stack);
+	$gv_theme_fonts->update_group_font_family('article',$font_stack);
 }
 add_action('after_setup_theme', 'gv_lenguas_register_theme_fonts');
 
