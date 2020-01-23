@@ -261,6 +261,16 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 		'position' => 'bottom',
 	));
 	gv_register_postmeta_insert(array(
+		'taxonomy' => 'gv_geo',
+		'label' => 'País',
+		'position' => 'bottom',
+	));
+	gv_register_postmeta_insert(array(
+		'taxonomy' => 'gv_tools',
+		'label' => '¿Qué herramientas emplea principalmente con su proyecto?',
+		'position' => 'bottom',
+	));		
+	gv_register_postmeta_insert(array(
 		'postmeta_field_name' => 'project-type',
 		'label' => '¿Cómo se identifica tu proyecto/iniciativa?',
 		'position' => 'bottom',
