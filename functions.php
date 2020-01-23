@@ -51,6 +51,14 @@ if (isset($gv) AND is_object($gv)) :
 	include_once('gv-microgrants-questions-lenguas-2015.php');
 	
 	/**
+	 * Register Lenguas Projects Listing questions for 2020
+	 * 
+	 * Goes with a Gravity Forms form that submits post drafts with the 'directorio' category and a bunch of
+	 * custom fields that get registered for admin display and frontend display in this file. 
+	 */
+	include_once('lenguas-projects-questions-2020.php');
+	
+	/**
 	 * For geo mashup plugin show excerpts instead of thumbnails
 	 */
 //	add_filter('gv_geo_mashup_show_thumbnail', '__return_false');
