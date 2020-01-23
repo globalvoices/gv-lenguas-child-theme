@@ -63,9 +63,9 @@ function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {
 	/**
 	 * Project Language
 	 */
-	x_add_metadata_field( 'project-language', array('post'), array(
+	x_add_metadata_field( 'project-language-other', array('post'), array(
 		'group' => 'gv_custom_metadata_posts',
-		'label' => 'Con qué lengua(s) indígena(s) u originaria(s) trabaja tu proyecto?',
+		'label' => 'Si tu lengua no figura en las opciones disponibles, escríbalo aquí.',
 		'field_type' => 'textarea',
 	));
 	/**
@@ -245,11 +245,18 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 //		'label' => 'Tu correo electrónico: (e-mail)',
 //		'position' => 'bottom',
 //	));
+
 	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-language',
+		'taxonomy' => 'gv_languages',
 		'label' => 'Con qué lengua(s) indígenar(s) u originaria(s) trabaja tu proyecto?',
 		'position' => 'bottom',
 	));
+	// hidden
+//	gv_register_postmeta_insert(array(
+//		'postmeta_field_name' => 'project-language-other',
+//		'label' => '',
+//		'position' => 'bottom',
+//	));
 	gv_register_postmeta_insert(array(
 		'postmeta_field_name' => 'project-year',
 		'label' => '¿En qué año comenzó tu proyecto?',
