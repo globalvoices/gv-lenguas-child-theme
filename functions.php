@@ -856,13 +856,20 @@ if (isset($gv) AND is_object($gv)) :
 	 * Sponsors definition to be used by gv_get_sponsors()
 	 */
 	$gv->sponsors = array(
-		'globalvoices' => array(
-			"name" => "Global Voices",
-			"slug" => "globalvoices",
-			'description' => 'Global Voices - Citizen media stories from around the world',
-			"url" => "https://globalvoices.org/",
+		'risingvoices' => array(
+			"name" => "Rising Voices",
+			"slug" => "risingvoices",
+			'description' => 'Rising Voices, un proyecto de Global Voices que ayuda a difundir los medios ciudadanos en lugares que normalmente no tienen acceso a ellos',
+			"url" => "https://rising.globalvoices.org/",
 			'status' => 'featured',
 			),
+//		'globalvoices' => array(
+//			"name" => "Global Voices",
+//			"slug" => "globalvoices",
+//			'description' => 'Global Voices - Citizen media stories from around the world',
+//			"url" => "https://globalvoices.org/",
+//			'status' => 'featured',
+//			),
 	);
 	
 	/**
