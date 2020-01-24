@@ -248,7 +248,7 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_languages',
-		'label' => 'Con qué lengua(s) indígenar(s) u originaria(s) trabaja tu proyecto?',
+		'label' => '¿Con qué lengua(s) indígena(s) u originaria(s) trabaja tu proyecto?',
 		'position' => 'bottom',
 	));
 	// hidden
