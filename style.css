@@ -9,8 +9,6 @@ Template: gv-project-theme
 
 */
 
-@import url("../gv-project-theme/style.css");
-
 /*Custom font stuff for Noto Sans JP overhaul*/
 
 /*Use Noto Sans black and make it condensed*/
@@ -195,3 +193,34 @@ text-shadow: none;
 	font-weight: bold;
 	text-decoration: underline;
 }
+
+/*Imported from GV PROJECT THEME*/
+.page li.video,
+.page li.podcast, 
+.page li.web, 
+.page li.docs, 
+.page li.user, 
+.page li.photo {
+	/*GENERAL FOR ALL ICONS*/
+	list-style-type: none;
+	margin: 5px 0 0 5px;
+	padding: 2px 0 0 28px;
+	}
+.page li.video {
+	background: url(images/icon-video.gif) top left no-repeat;
+	}
+.page li.podcast {
+	background: url(images/icon-podcast.gif) top left no-repeat;
+	}
+.page li.web {
+	background: url(images/icon-web.gif) top left no-repeat;
+	}
+.page li.docs {
+	background: url(images/icon-docs.gif) top left no-repeat;
+	}
+.page li.user {
+	background: url(images/icon-user.gif) top left no-repeat;
+	}
+.page li.photo {
+	background: url(images/icon-photo.gif) top left no-repeat;
+	}
