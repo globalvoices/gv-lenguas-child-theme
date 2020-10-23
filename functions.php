@@ -20,9 +20,9 @@ function gv_lenguas_register_theme_fonts() {
 	/**
 	 * Import CSS: Load Noto Sans various weights for testing 
 	 */
-	$gv_theme_fonts->update_import_css('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap" rel="stylesheet">');
+	$gv_theme_fonts->update_import_css('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900&display=swap" rel="stylesheet">');
 	
-	$font_stack = "'Noto Sans JP', 'Roboto', 'Helvetica Neue', sans-serif";
+	$font_stack = "'Noto Sans TC', 'Roboto', 'Helvetica Neue', sans-serif";
 	
 	$gv_theme_fonts->update_group_font_family('headings',$font_stack);
 	$gv_theme_fonts->update_group_font_family('default', $font_stack);
