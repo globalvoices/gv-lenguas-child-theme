@@ -12,14 +12,20 @@ Template: gv-project-theme
 /*Custom font stuff for Noto Sans JP overhaul*/
 
 /*Use Noto Sans black and make it condensed*/
-#ENORMOUS-TEXT,
-.SEE-media-queries-group-must-match,
+#HEAVY-WEIGHT-CONDENSED-TEXT,
 h2.screen-title,
 .cycled-feature h3,
-.enormous-text {
+.entry h1,
+.entry h2,
+.entry h3,
+.entry h4,
+.entry h5,
+.entry h6,
+.heavy-weight-condensed-text {
 	font-weight: 900;
-	letter-spacing: -1px;
+	letter-spacing: -.015em;
 }
+
 /*More line height for noto regular in entries*/
 #LINE-HEIGHT-ONE-AND-QUARTER-LINE,
 .full-article .entry,
