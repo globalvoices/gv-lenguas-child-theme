@@ -34,8 +34,10 @@ if (isset($gv) AND is_object($gv)) :
 
 	/**
 	 * Disable automatic plugin activation from parent theme. We need this theme to work in MU
+	 * ! Re-enabled/dis-disabled 2021-10-13 on the assumption that all of the default plugins now work on multisite/rv
+	 * 
 	 */
-	define('GV_NO_DEFAULT_PLUGINS', TRUE);
+	// define('GV_NO_DEFAULT_PLUGINS', TRUE);
 
 	/**
 	 * Define GV_LINGUA as false to override the TRUE definition in the projects theme 
