@@ -11,6 +11,12 @@
 
 defined( 'ABSPATH' ) || exit();
 
+/* 
+ * We do not render breadcrumbs
+ * because they are not very useful
+*/
+return;
+
 if ( empty( $breadcrumb ) ) {
 	return;
 }
