@@ -230,3 +230,25 @@ text-shadow: none;
 .page li.photo {
 	background: url(images/icon-photo.gif) top left no-repeat;
 	}
+
+
+/* 
+ * Learn Press
+*/
+
+.course-info-left .course-title, .lp-archive-courses .course-summary .course-summary-content .course-detail-info {
+	color:#000 !important;
+	background: #fff !important;
+}
+
+.lp-archive-courses .course-summary .course-summary-content .course-detail-info .course-info-left .course-meta .course-meta__pull-left .meta-item .meta-item__value > div a {
+	color: var(--lp-primary-color) !important;
+}
+
+.lp-badge.featured-course {
+	background: var(--lp-secondary-color) !important;
+}
+
+#popup-course #popup-header {
+	background: var(--lp-primary-color) !important;
+}
