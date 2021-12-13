@@ -14,6 +14,18 @@ add_filter('learn-press/override-templates', function () {
 	return true;
 });
 
+/* 
+ * Add the right wrapper classes to all LP pages
+ * to match margins, responsive behavior of other
+ * GV pages
+*/
+add_action('learn-press/before-main-content', function() {
+	echo '<div class="main-wrapper"> <div class="main">';
+});
+add_action('learn-press/after-main-content', function () {
+	echo '</div></div>';
+});
+
 /**
  * Register fonts for GV Project Theme
  * 
