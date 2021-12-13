@@ -7,6 +7,14 @@
  */
 
 /**
+ * Allows loading of LearnPress templates 
+ * from the LP folder under this theme
+ */
+add_filter('learn-press/override-templates', function () {
+	return true;
+});
+
+/**
  * Register fonts for GV Project Theme
  * 
  * @global GV_Theme_Fonts $gv_theme_fonts
