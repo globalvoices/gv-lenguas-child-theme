@@ -20,7 +20,7 @@ add_filter('learn-press/override-templates', function () {
  * GV pages
 */
 add_action('learn-press/before-main-content', function() {
-	echo '<div class="main-wrapper"> <div class="main">';
+	echo '<div class="main-wrapper gv-single-extra-wide"> <div class="main">';
 });
 add_action('learn-press/after-main-content', function () {
 	echo '</div></div>';
