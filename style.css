@@ -252,3 +252,10 @@ text-shadow: none;
 #popup-course #popup-header {
 	background: var(--lp-primary-color) !important;
 }
+
+#checkout-order, #learn-press-checkout > .learnpress > .learn-press-message.error {
+	display: none;
+}
+.order-comments {
+	min-height: 50px !important;
+}
