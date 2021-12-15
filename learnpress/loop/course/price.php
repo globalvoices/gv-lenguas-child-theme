@@ -11,6 +11,11 @@
 
 defined( 'ABSPATH' ) || exit();
 
+/* 
+ * WE DO NOT WANT TO SHOW PRICES OR IF THE COURSE IS FREE
+*/
+return;
+
 $course = learn_press_get_course();
 
 if ( ! $course ) {
