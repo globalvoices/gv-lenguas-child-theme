@@ -35,21 +35,17 @@ echo wp_sprintf(
 	esc_html(
 		apply_filters(
 			'learn-press/order/received-order-message',
-			__( 'Thank you. Your order has been received.', 'learnpress' )
+			'Thank you for enrolling. Click on the link below to continue.'
+			// TODO: use translations eventually
+			//__( 'Thank you. Your order has been received.', 'learnpress' )
 		)
 	)
 );
 
 ?>
 <table class="order_details">
-	<tr class="order">
-		<th><?php esc_html_e( 'Order Number', 'learnpress' ); ?></th>
-		<td>
-			<?php echo esc_html( $order_received->get_order_number() ); ?>
-		</td>
-	</tr>
-	<tr class="item">
-		<th><?php esc_html_e( 'Item', 'learnpress' ); ?></th>
+	<tr class="item confirm">
+		<th></th>
 		<td>
 			<?php
 			$links = array();
@@ -64,7 +60,7 @@ echo wp_sprintf(
 						$item
 					);
 				} else {
-					$link = '<a href="' . get_the_permalink( $item['course_id'] ) . '">' . get_the_title( $item['course_id'] ) . ' (#' . $item['course_id'] . ')' . '</a>';
+					$link = '<a href="' . get_the_permalink( $item['course_id'] ) . '">' . get_the_title( $item['course_id'] ) . '</a>';
 					if ( $count > 1 ) {
 						$link = sprintf( '<li>%s</li>', $link );
 					}
@@ -80,25 +76,6 @@ echo wp_sprintf(
 				echo esc_html__( '(No item)', 'learnpress' );
 			}
 			?>
-		</td>
-	</tr>
-	<tr class="date">
-		<th><?php esc_html_e( 'Date', 'learnpress' ); ?></th>
-		<td>
-			<?php
-			echo wp_kses_post(
-				date_i18n(
-					get_option( 'date_format' ),
-					strtotime( $order_received->get_order_date() )
-				)
-			);
-			?>
-		</td>
-	</tr>
-	<tr class="total">
-		<th><?php esc_html_e( 'Total', 'learnpress' ); ?></th>
-		<td>
-			<?php echo wp_kses_post( $order_received->get_formatted_order_total() ); ?>
 		</td>
 	</tr>
 	<?php

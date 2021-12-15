@@ -236,6 +236,24 @@ text-shadow: none;
  * Learn Press
 */
 
+/* 
+ * Checkout Page
+*/
+#checkout-order, #learn-press-checkout > .learnpress > .learn-press-message.error {
+	display: none;
+}
+
+.order-comments {
+	min-height: 50px !important;
+}
+
+#learn-press-checkout {
+	margin: 0;
+}
+
+/* 
+ * Single Course Page
+*/
 .course-info-left .course-title, .lp-archive-courses .course-summary .course-summary-content .course-detail-info {
 	color:#000 !important;
 	background: #fff !important;
@@ -253,9 +271,27 @@ text-shadow: none;
 	background: var(--lp-primary-color) !important;
 }
 
-#checkout-order, #learn-press-checkout > .learnpress > .learn-press-message.error {
-	display: none;
+.lp-archive-courses .course-summary .course-summary-content .course-detail-info {
+	padding-top: 0 !important;
 }
-.order-comments {
-	min-height: 50px !important;
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .media-preview {
+	margin-bottom: 20px !important;
+}
+
+.lp-button {
+	cursor: pointer !important;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview {
+	margin-bottom: 0 !important;
+}
+
+/* 
+ * Enroll/Order Confirm page
+*/
+.order_details .confirm {
+	margin-bottom: 200px;
+	display: block;
+	border-spacing: 0;
 }

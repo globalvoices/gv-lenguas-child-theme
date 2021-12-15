@@ -67,7 +67,7 @@ defined( 'ABSPATH' ) || exit();
 		<?php do_action( 'learn-press/before-checkout-submit-button' ); ?>
 
 		<button type="submit" class="lp-button button alt" name="learn_press_checkout_place_order" id="learn-press-checkout-place-order">
-			<?php echo apply_filters( 'learn-press/checkout-proceed-button-text', esc_html__( 'Place order', 'learnpress' ) ); ?>
+			<?php echo apply_filters( 'learn-press/checkout-proceed-button-text', 'Enroll' ); ?>
 		</button>
 
 		<?php
