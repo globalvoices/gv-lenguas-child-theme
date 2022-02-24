@@ -231,7 +231,14 @@ text-shadow: none;
 	background: url(images/icon-photo.gif) top left no-repeat;
 	}
 
+/* 
+ * Homepage
+*/
 
+#FLEXIBLE-BACKGROUND-IMAGE-CONTAINER, .cycled-feature, .css-post-thumbnail, .flexible-background-image-container {
+	/* because it's blank when no image is present */
+	background-color: #eee; 
+}
 /* 
  * Learn Press
 */
