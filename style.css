@@ -302,3 +302,39 @@ text-shadow: none;
 	display: block;
 	border-spacing: 0;
 }
+
+.postmeta-insert {
+	width: 33%;
+	display: inline-flex;
+	flex-direction: column;
+	min-height: 60px;
+	margin-bottom: 20px;
+}
+.postmeta-insert h3 {
+	/* flex-grow: 1; */
+	padding: 0;
+	margin: 0;
+}
+.postmeta-insert-content {
+		margin-bottom: auto;
+		background-color: unset;
+		padding: 0;
+		padding-right: 10px;
+}
+.postmeta-insert-content p {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.postmeta-insert-url > a {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+}
+@media
+only screen and (max-width:400px) {
+	.postmeta-insert {
+	width: 50%;
+	}
+}
