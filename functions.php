@@ -27,6 +27,102 @@ add_action('learn-press/after-main-content', function () {
 });
 
 /**
+ * Filter post archive loop args to force the grid-3 format for certain taxonomy archives
+ *
+ * Use with gv_post_archive_loop_args filter from GV_Post_Archive->determine_post_loop_args()
+ * e.g.:
+ * 	add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+ * 
+ * @param array $post_loop_args 
+ * @param GV_Post_Archive $gv_post_archive_object For reference
+ * @return void
+ */
+function lenguas_filter_gv_post_archive_loop_args(array $post_loop_args, $gv_post_archive_object)
+{
+
+	// Only apply to this/these categories, run the check multiple times with AND ! if necessary
+	if (!gv_is_taxonomy_archive('category', 'directorio')) {
+		return $post_loop_args;
+	}
+
+	$post_loop_args['format_class'] = 'GV_Post_Loop_Format_Grid_3';
+
+	return $post_loop_args;
+}
+add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+
+/**
+ * Filter display post terms limit to make it unlimited for certain taxonomy archives
+ *
+ * Use with gv_display_post_terms_limit filter from gv_taxonomies->display_post_terms()
+ * e.g.:
+ * 	add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+ * 
+ * @param array $post_loop_args
+ * @param GV_Post_Archive $gv_post_archive_object For reference
+ * @return void
+ */
+function lenguas_filter_gv_display_post_terms_limit($limit, $args)
+{
+
+	if (!gv_is_taxonomy_archive('category', 'directorio')) {
+		return $limit;
+	}
+
+	// Only insert this for posts in the main loop, excluding widgets/headlines/etc.
+	if (!gv_backtrace_contains_function('gv_display_post_archive')) {
+		return $limit;
+	}
+
+	return 0;
+}
+add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_display_post_terms_limit', 10, 2);
+
+/**
+ * Filter post promo card meta to insert postmeta fields
+ * 
+ * Use with gv_post_promo_card_meta_start filter from GV_Promo_Card_Post->get_text()
+ * e.g.:
+ * 	add_filter('gv_post_promo_card_meta_start', 'gv_filter_post_promo_card_meta_start_to_insert_custom_fields', 10, 2);
+ * 
+ * @param string $output Meta output so far (from other filters)
+ * @param WP_Post $post
+ * @return string
+ */
+function gv_filter_post_promo_card_meta_start_to_insert_custom_fields(string $output, WP_Post $post)
+{
+
+	// Only insert this for posts in the main loop, excluding widgets/headlines/etc.
+	if (!gv_backtrace_contains_function('gv_display_post_archive')) {
+		return $output;
+	}
+	
+	// Example content to insert: Tagline
+	$custom_field_output = gv_display_post_tagline($post, array(
+		'echo' => false,
+	));
+	
+	/* 
+	Not able to achieve desired result because what I actually want is to control the meta terms
+	that are already inserted - for eg: i want only gv_languages to be rendered. This func allows
+	you to insert content before the meta terms and not actually edit their listing.
+	*/
+	// $custom_field_output = gv_get_post_public_taxonomy_terms();
+	// $custom_field_output1 = gv_get_post_terms_flattened();
+	//get link of term gv_display_term_link()
+	
+	// gv_get_custom_field()
+	// gv_get_gv_taxonomies_object()
+
+	if ($custom_field_output) {
+		$output = $output . $custom_field_output;
+	}
+
+	return $output;
+}
+// add_filter('gv_post_promo_card_meta_start', 'gv_filter_post_promo_card_meta_start_to_insert_custom_fields', 10, 2);
+
+/**
  * Register fonts for GV Project Theme
  * 
  * @global GV_Theme_Fonts $gv_theme_fonts
