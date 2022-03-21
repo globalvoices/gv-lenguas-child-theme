@@ -1,19 +1,11 @@
 <?php
-/*
- * Questions for the 2020 Lenguas microgrants competition
- */ 
-
-// TODO: Add functions that check if the post is in approate category before registering fields and inserts
-//function gv_is_editing_post_in_term($term, $taxonomy) {
-//	
-//}
 
 /**
  * Register custom postmeta fields with the Custom Medatata Manager plugin
  *
  * Convert to some other format if this ever stops working
  */
-function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {	
+function gv_lenguas_2022_project_custom_metadata_manager_admin_init() {	
 	/**
 	 * Exit if the plugin isn't present
 	 */
@@ -215,7 +207,7 @@ function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {
 	 */	
 	define('GV_LENGUAS_PROJECTS_METADATA_DEFINED', true);
 }
-add_action( 'current_screen', 'gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init');
+add_action( 'current_screen', 'gv_lenguas_2022_project_custom_metadata_manager_admin_init');
 
 /**
  * Register postmeta inserts
@@ -226,7 +218,7 @@ add_action( 'current_screen', 'gv_microgrants_lenguas_2020_custom_metadata_manag
  * questions in the microgrants theme because GV_MICROGRANTS_POSTMETA_INSERTS_DEFINED 
  * will be true
  */
-function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
+function gv_lenguas_2022_project_register_postmeta_inserts() {
 
 	if (!function_exists('gv_register_postmeta_insert'))
 		return;
@@ -345,7 +337,7 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 		'label' => 'Otras plataformas',
 		'position' => 'bottom',
 	));
-	// hidden
+// hidden
 //	gv_register_postmeta_insert(array(
 //		'postmeta_field_name' => 'project-team',
 //		'label' => '(Opcional) Comparta los nombres de las personas clave (y sus roles) en el, o el nombre de la organización al frente del, proyectos',
@@ -364,4 +356,4 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 	 */
 	define('GV_MICROGRANTS_POSTMETA_INSERTS_DEFINED', true);
 }
-add_action('wp', 'gv_microgrants_lenguas_2020_register_postmeta_inserts');
+add_action('wp', 'gv_lenguas_2022_project_register_postmeta_inserts');
