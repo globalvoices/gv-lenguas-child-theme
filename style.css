@@ -286,6 +286,10 @@ text-shadow: none;
 	margin-bottom: 20px !important;
 }
 
+.lp-archive-courses .course-summary .course-summary-content .course-detail-info .course-info-left .course-title {
+	padding-top: 20px;
+}
+
 .lp-button {
 	cursor: pointer !important;
 }
