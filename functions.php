@@ -860,4 +860,89 @@ if (isset($gv) AND is_object($gv)) :
 	
 endif; // is_object($gv)
 
-?>
+/**
+ * Filter post archive loop args to force the grid-3 format for certain taxonomy archives
+ *
+ * ! DEACTIVATED: JUST A DEMO
+ * 
+ * Use with gv_post_archive_loop_args filter from GV_Post_Archive->determine_post_loop_args()
+ * e.g.:
+ * 	add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+ * 
+ * @param array $post_loop_args 
+ * @param GV_Post_Archive $gv_post_archive_object For reference
+ * @return void
+ */
+function lenguas_filter_gv_post_archive_loop_args(array $post_loop_args, $gv_post_archive_object) {
+
+	// Only apply to this/these categories, run the check multiple times with AND ! if necessary
+	if (! gv_is_taxonomy_archive('category', 'cameroon')) {
+		return $post_loop_args;
+	}
+	
+	$post_loop_args['format_class'] = 'GV_Card_Loop_Format_Grid_3';
+
+	return $post_loop_args;
+}
+// add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+
+/**
+ * Filter display post terms limit to make it unlimited for certain taxonomy archives
+ *
+ * ! DEACTIVATED: JUST A DEMO
+ * 
+ * Use with gv_display_post_terms_limit filter from gv_taxonomies->display_post_terms()
+ * e.g.:
+ * 	add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+ * 
+ * @param array $post_loop_args 
+ * @param GV_Post_Archive $gv_post_archive_object For reference
+ * @return void
+ */
+function lenguas_filter_gv_display_post_terms_limit($limit, $args) {
+	
+	if (! gv_is_taxonomy_archive('category', 'cameroon')) {
+		return $limit;
+	}
+
+	// Only insert this for posts in the main loop, excluding widgets/headlines/etc.
+	if (!gv_backtrace_contains_function('gv_get_post_archive_html')) {
+		return $limit;
+	}
+
+	return 0;
+}
+// add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_display_post_terms_limit', 10, 2);
+
+/**
+ * Filter post promo card meta to insert postmeta fields
+ * 
+ * ! DEACTIVATED: JUST A DEMO
+ * 
+ * Use with gv_post_promo_card_meta_start filter from GV_Promo_Card_Post->get_text()
+ * e.g.:
+ * 	add_filter('gv_post_promo_card_meta_start', 'gv_filter_post_promo_card_meta_start_to_insert_custom_fields', 10, 2);
+ * 
+ * @param string $output Meta output so far (from other filters)
+ * @param WP_Post $post
+ * @return string
+ */
+function gv_filter_post_promo_card_meta_start_to_insert_custom_fields(string $output, WP_Post $post) {
+
+	// Only insert this for posts in the main loop, excluding widgets/headlines/etc.
+	if (!gv_backtrace_contains_function('gv_get_post_archive_html')) {
+		return $output;
+	}
+
+	// Example content to insert: Tagline
+	$custom_field_output = gv_display_post_tagline($post, array(
+		'echo' => false,
+	));
+
+	if ($custom_field_output) {
+		$output = $output . $custom_field_output;
+	}
+
+	return $output;
+}
+// add_filter('gv_post_promo_card_meta_start', 'gv_filter_post_promo_card_meta_start_to_insert_custom_fields', 10, 2);
