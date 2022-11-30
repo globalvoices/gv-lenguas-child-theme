@@ -3,13 +3,19 @@
  * Questions for the 2020 Lenguas microgrants competition
  */ 
 
-// TODO: Add functions that check if the post is in approate category before registering fields and inserts
+// TODO: Add functions that check if the post is in appropriate category before registering fields and inserts
 //function gv_is_editing_post_in_term($term, $taxonomy) {
 //	
 //}
 
 /**
  * Register custom postmeta fields with the Custom Medatata Manager plugin
+ * 
+ * If a post has the `directorio` term then it will automatically have these fields registered
+ * in the "Post Settings (Global Voices)" metabox so that they can be edited. 
+ * 
+ * See the *_register_postmeta_inserts()  function below for registrations that control
+ * the frontend display of these posts.
  *
  * Convert to some other format if this ever stops working
  */
@@ -24,17 +30,29 @@ function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {
 	 * Make sure we are on a post editing screen
 	 */
 	$current_screen = get_current_screen();
-	if ('post' != $current_screen->base)
+	if ('post' != $current_screen->base) {
 		return;
+	}
+	
+	/**
+	 * Get the object of the post being edited
+	 */
+	$post = '';
+	// Editor stores it in _GET
+	if (isset($_GET['post']) AND get_post($_GET['post'])) {
+		$post = get_post($_GET['post']);
+	// During post saving it's in _POST
+	} elseif (isset($_POST['post_ID']) AND get_post($_POST['post_ID'])) {
+		$post = get_post($_POST['post_ID']);
+	}
 	
 	/**
 	 * Exit unless this post is in the appropriate category
 	 */
-	$post = '';
-	if (isset($_GET['post']) AND get_post($_GET['post']))
-		$post = get_post($_GET['post']);
-	if (!is_object($post) OR empty($post->ID) OR !has_term('directorio', 'category', $post->ID))
+	if (!is_object($post) OR empty($post->ID) OR !has_term('directorio', 'category', $post->ID)) {
+
 		return;
+	}
 	
 	/**
 	 * Register a group for pages and posts
@@ -209,7 +227,7 @@ function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {
 add_action( 'current_screen', 'gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init');
 
 /**
- * Register postmeta inserts
+ * Register postmeta inserts for display on the frontend if they have the `directorio` category
  * 
  * These will be auto-inserted into post content
  * 
@@ -223,10 +241,12 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 		return;
 
 	/**
-	 * ONLY LOAD IF WE ARE ON THE SINGLE PAGE FOR A POST WITH TEH APPRORIATE CATEGORY
+	 * ONLY LOAD IF WE ARE ON THE SINGLE PAGE FOR A POST WITH THE APPROPRIATE CATEGORY
 	 */
-	if (!is_single() or !get_queried_object_id()) 
+	if (!is_single() or !get_queried_object_id()) {
+	
 		return;
+	}
 
 	$post_id = get_queried_object_id();
 	$post = get_post($post_id);
