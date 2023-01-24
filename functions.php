@@ -863,8 +863,6 @@ endif; // is_object($gv)
 /**
  * Filter post archive loop args to force the grid-3 format for certain taxonomy archives
  *
- * ! DEACTIVATED: JUST A DEMO
- * 
  * Use with gv_post_archive_loop_args filter from GV_Post_Archive->determine_post_loop_args()
  * e.g.:
  * 	add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
@@ -876,32 +874,31 @@ endif; // is_object($gv)
 function lenguas_filter_gv_post_archive_loop_args(array $post_loop_args, $gv_post_archive_object) {
 
 	// Only apply to this/these categories, run the check multiple times with AND ! if necessary
-	if (! gv_is_taxonomy_archive('category', 'cameroon')) {
+	if (!gv_is_taxonomy_archive('category', 'directorio')) {
 		return $post_loop_args;
 	}
-	
+
 	$post_loop_args['format_class'] = 'GV_Card_Loop_Format_Grid_3';
 
 	return $post_loop_args;
 }
-// add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
+add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
 
 /**
  * Filter display post terms limit to make it unlimited for certain taxonomy archives
  *
- * ! DEACTIVATED: JUST A DEMO
- * 
  * Use with gv_display_post_terms_limit filter from gv_taxonomies->display_post_terms()
  * e.g.:
  * 	add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
  * 
- * @param array $post_loop_args 
+ * @param array $post_loop_args
  * @param GV_Post_Archive $gv_post_archive_object For reference
  * @return void
  */
-function lenguas_filter_gv_display_post_terms_limit($limit, $args) {
-	
-	if (! gv_is_taxonomy_archive('category', 'cameroon')) {
+function lenguas_filter_gv_display_post_terms_limit($limit, $args)
+{
+
+	if (!gv_is_taxonomy_archive('category', 'directorio')) {
 		return $limit;
 	}
 
@@ -912,7 +909,7 @@ function lenguas_filter_gv_display_post_terms_limit($limit, $args) {
 
 	return 0;
 }
-// add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_display_post_terms_limit', 10, 2);
+add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_display_post_terms_limit', 10, 2);
 
 /**
  * Filter post promo card meta to insert postmeta fields
