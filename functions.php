@@ -7,6 +7,28 @@
  */
 
 /**
+ * Insert popular_yesterday headlines at the end of the post footer
+ *
+ * @see single.php which calls do_action('gv_theme_post_footer_end', $post);
+ * @param WP_Post $post_object
+ * @return void
+ */
+function gv_news_theme_post_footer_headlines(WP_Post $post_object) {
+	
+	if (is_page()) {
+		return;
+	}
+
+	gv_display_headlines(array(
+		'type' => 'popular_yesterday',
+		'count' => 3,
+		'content_css_classes' => " postfooter-headlines",
+	));
+}
+add_action('gv_theme_post_footer_end', 'gv_news_theme_post_footer_headlines');
+
+
+/**
  * Register fonts for GV Project Theme
  * 
  * @global GV_Theme_Fonts $gv_theme_fonts
