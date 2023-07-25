@@ -57,8 +57,11 @@ if (isset($gv) AND is_object($gv)) :
 	 * 
 	 * Goes with a Gravity Forms form that submits post drafts with the 'directorio' category and a bunch of
 	 * custom fields that get registered for admin display and frontend display in this file. 
+	 * 
+	 * ! 2023-07: Duplicated the file for 2023, when we cleaned up and simplified the questions and display
 	 */
-	include_once('lenguas-projects-questions-2020.php');
+	// include_once('lenguas-projects-questions-2020.php');
+	include_once('lenguas-projects-questions-2023.php');
 	
 	/**
 	 * For geo mashup plugin show excerpts instead of thumbnails
