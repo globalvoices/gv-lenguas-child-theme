@@ -278,43 +278,16 @@ function gv_microgrants_lenguas_2023_register_postmeta_inserts() {
 
 	$post_id = get_queried_object_id();
 	$post = get_post($post_id);
-	if (!is_object($post) OR empty($post->ID) OR !has_term('directorio', 'category', $post->ID))
+	if (!is_object($post) OR empty($post->ID) OR !has_term('directorio', 'category', $post->ID)) {
 		return;
-
-	//Hidden
-//	gv_register_postmeta_insert(array(
-//		'postmeta_field_name' => 'project-contact-name',
-//		'label' => 'Tu nombre',
-//		'position' => 'bottom',
-//	));
-	// Hidden
-//	gv_register_postmeta_insert(array(
-//		'postmeta_field_name' => 'project-contact-email',
-//		'label' => 'Tu correo electrónico: (e-mail)',
-//		'position' => 'bottom',
-//	));
+	}
 
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_languages',
-		'label' => '¿Con qué lengua(s) indígena(s) u originaria(s) trabaja tu proyecto?',
+		'label' => 'Lenguas',
 		'position' => 'bottom',
 	));
-	// hidden
-//	gv_register_postmeta_insert(array(
-//		'postmeta_field_name' => 'project-language-other',
-//		'label' => '',
-//		'position' => 'bottom',
-//	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-year',
-		'label' => '¿En qué año comenzó tu proyecto?',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-city',
-		'label' => '¿Desde qué ciudad se implementa su proyecto?',
-		'position' => 'bottom',
-	));
+
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_geo',
 		'label' => 'País',
@@ -322,76 +295,9 @@ function gv_microgrants_lenguas_2023_register_postmeta_inserts() {
 	));
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_tools',
-		'label' => '¿Qué herramientas emplea principalmente con su proyecto?',
-		'position' => 'bottom',
-	));		
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-type',
-		'label' => '¿Cómo se identifica tu proyecto/iniciativa?',
+		'label' => 'Herramientas digitales',
 		'position' => 'bottom',
 	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-challenges',
-		'label' => '¿Cuáles son algunos de los desafíos que enfrenta? (lingüísticos, técnicos, socio-culturales, gestión)',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-strategies',
-		'label' => '¿Qué estrategias está empleando para abordar los desafíos identificados?',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-audience',
-		'label' => '¿Para quién está pensado el proyecto? ¿Tienen un tipo de población especial en mente? ¿Quién es su público objetivo?',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-assistance',
-		'label' => '¿Cuáles crees que serían las herramientas de capacitación y planeación más importantes que requiere tu proyecto para continuar, para consolidarse y para conseguir sus objetivos?',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-website',
-		'label' => 'Sitio web',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-facebook',
-		'label' => 'Facebook',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-twitter',
-		'label' => 'Twitter',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-instagram',
-		'label' => 'Instagram',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-youtube',
-		'label' => 'YouTube',
-		'position' => 'bottom',
-	));
-	gv_register_postmeta_insert(array(
-		'postmeta_field_name' => 'project-otherplatforms',
-		'label' => 'Otras plataformas',
-		'position' => 'bottom',
-	));
-	// hidden
-//	gv_register_postmeta_insert(array(
-//		'postmeta_field_name' => 'project-team',
-//		'label' => '(Opcional) Comparta los nombres de las personas clave (y sus roles) en el, o el nombre de la organización al frente del, proyectos',
-//		'position' => 'bottom',
-//	));
-	// hidden
-//	gv_register_postmeta_insert(array(
-//		'postmeta_field_name' => 'project-team-contact',
-//		'label' => '¿Cuál es la mejor manera para que alguien les contacte si tienen preguntas?',
-//		'position' => 'bottom',
-//	));
 
 	/**
 	 * Set GV_MICROGRANTS_POSTMETA_INSERTS_DEFINED to true to avoid
