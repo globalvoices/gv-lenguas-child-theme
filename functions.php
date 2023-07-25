@@ -36,19 +36,14 @@ add_action('gv_theme_post_footer_end', 'gv_news_theme_post_footer_headlines');
 function gv_lenguas_register_theme_fonts() {
 	global $gv_theme_fonts;
 	
-	if (!is_a($gv_theme_fonts, 'GV_Theme_Fonts'))
-		 return;
+	if (!is_a($gv_theme_fonts, 'GV_Theme_Fonts')) {
+		return;
+	}
 	
-	/**
-	 * Import CSS: Load Noto Sans various weights for testing 
-	 */
-	$gv_theme_fonts->update_import_css('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900&display=swap" rel="stylesheet">');
-	
-	$font_stack = "'Noto Sans TC', 'Roboto', 'Helvetica Neue', sans-serif";
-	
-	$gv_theme_fonts->update_group_font_family('headings',$font_stack);
-	$gv_theme_fonts->update_group_font_family('default', $font_stack);
-	$gv_theme_fonts->update_group_font_family('article',$font_stack);
+	$heading_stack = "'Seravek', source-sans-pro, BlinkMacSystemFont, -apple-system, 'Roboto', 'Nimbus Sans', system-ui, sans-serif;";
+
+	$gv_theme_fonts->update_group_font_family('default', $heading_stack);
+	$gv_theme_fonts->update_group_font_family('article',$heading_stack);
 }
 add_action('after_setup_theme', 'gv_lenguas_register_theme_fonts');
 
