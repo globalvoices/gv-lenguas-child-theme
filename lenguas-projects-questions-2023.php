@@ -1,12 +1,13 @@
 <?php
-/*
- * Questions for the 2020 Lenguas microgrants competition
+/**
+ * Field and postmeta insert registrations for the Lenguas Project Directory category
+ * 
+ * Copied from lenguas-projects-questions-2020.php which became a damn mess. This is no longer about a microgrants
+ * competition, this goes with a form where people submit their projects to be listed. 
+ * 
+ * It applies to any post with the right category ('directorio') and adds automatic handling of postmeta
+ * fields that get created by the matching Gravity form.
  */ 
-
-// TODO: Add functions that check if the post is in appropriate category before registering fields and inserts
-//function gv_is_editing_post_in_term($term, $taxonomy) {
-//	
-//}
 
 /**
  * Register custom postmeta fields with the Custom Medatata Manager plugin
@@ -19,12 +20,15 @@
  *
  * Convert to some other format if this ever stops working
  */
-function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {	
+function gv_microgrants_lenguas_2023_custom_metadata_manager_admin_init() {	
 	/**
 	 * Exit if the plugin isn't present
 	 */
-	if(!function_exists( 'x_add_metadata_field' ) OR !function_exists( 'x_add_metadata_group' ) )
+	if(!function_exists( 'x_add_metadata_field' ) OR !function_exists( 'x_add_metadata_group' ) ) {
 		return;
+	}
+
+	// TODO Extract as gv_is_editing_post_in_term(string $term_name, string $taxonomy_name)
 
 	/**
 	 * Make sure we are on a post editing screen
@@ -54,6 +58,8 @@ function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {
 		return;
 	}
 	
+	// TODO End extract 
+
 	/**
 	 * Register a group for pages and posts
 	 */
@@ -208,23 +214,13 @@ function gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init() {
 		'field_type' => 'textarea',
 	));
 
-
-//	/**
-//	 * Hide creation/update dates, pages only
-//	 */
-//	x_add_metadata_field('gv-hide-dates', array( 'page'), array(
-//		'group' => 'gv_custom_metadata_posts',
-//		'label' => 'Hide dates on post (creation and last updated)',
-//		'field_type' => 'checkbox',
-//	));
-
 	/**
 	 * Set GV_MICROGRANTS_METADATA_DEFINED to true to avoid
 	 * default new questions being applied
 	 */	
 	define('GV_LENGUAS_PROJECTS_METADATA_DEFINED', true);
 }
-add_action( 'current_screen', 'gv_microgrants_lenguas_2020_custom_metadata_manager_admin_init');
+add_action( 'current_screen', 'gv_microgrants_lenguas_2030_custom_metadata_manager_admin_init');
 
 /**
  * Register postmeta inserts for display on the frontend if they have the `directorio` category
@@ -235,16 +231,16 @@ add_action( 'current_screen', 'gv_microgrants_lenguas_2020_custom_metadata_manag
  * questions in the microgrants theme because GV_MICROGRANTS_POSTMETA_INSERTS_DEFINED 
  * will be true
  */
-function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
+function gv_microgrants_lenguas_2023_register_postmeta_inserts() {
 
-	if (!function_exists('gv_register_postmeta_insert'))
+	if (!function_exists('gv_register_postmeta_insert')) {
 		return;
+	}
 
 	/**
 	 * ONLY LOAD IF WE ARE ON THE SINGLE PAGE FOR A POST WITH THE APPROPRIATE CATEGORY
 	 */
 	if (!is_single() or !get_queried_object_id()) {
-	
 		return;
 	}
 
@@ -371,4 +367,4 @@ function gv_microgrants_lenguas_2020_register_postmeta_inserts() {
 	 */
 	define('GV_MICROGRANTS_POSTMETA_INSERTS_DEFINED', true);
 }
-add_action('wp', 'gv_microgrants_lenguas_2020_register_postmeta_inserts');
+add_action('wp', 'gv_microgrants_lenguas_2023_register_postmeta_inserts');
