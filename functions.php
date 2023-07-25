@@ -47,6 +47,21 @@ function gv_lenguas_register_theme_fonts() {
 }
 add_action('after_setup_theme', 'gv_lenguas_register_theme_fonts');
 
+/**
+ * Hide author credits on 'directorio' posts
+ *
+ * @return void
+ */
+function gv_lenguas_css_hide_credits_on_directorio_posts() {
+
+	if (!is_single() OR !is_object_in_term(get_queried_object_id(), 'category', 'directorio')) {
+		return;
+	}
+
+	echo "<!--gv_lenguas_css_hide_credits_on_directorio_posts()-->\n<style>.credit, .postmeta-container .license {display:none;}</style>\n";
+}
+add_action('wp_head', 'gv_lenguas_css_hide_credits_on_directorio_posts');
+
 if (isset($gv) AND is_object($gv)) :
 
 	/**
