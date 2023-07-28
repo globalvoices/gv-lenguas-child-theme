@@ -125,9 +125,9 @@ function gv_microgrants_lenguas_2023_custom_metadata_manager_admin_init() {
 		'field_type' => 'textarea',
 	));
 	/**
-	 * Project public contact - Backend only
+	 * Project team contact - Backend only
 	 */
-	x_add_metadata_field( 'project-public-contact', array('post'), array(
+	x_add_metadata_field( 'project-team-contact', array('post'), array(
 		'group' => 'lenguas_project_questions_2023',
 		'label' => 'Si alguien de otro proyecto tiene preguntas, ¿qué opción prefieren para ser contactados?',
 		'field_type' => 'textarea',
@@ -237,14 +237,7 @@ function gv_microgrants_lenguas_2023_custom_metadata_manager_admin_init() {
 		'label' => '(Opcional) Comparta los nombres de las personas clave (y sus roles) en el, o el nombre de la organización al frente del, proyectos',
 		'field_type' => 'textarea',
 	));
-	/**
-	 * Project team contact
-	 */
-	x_add_metadata_field( 'project-team-contact', array('post'), array(
-		'group' => 'lenguas_project_questions_2020',
-		'label' => '¿Cuál es la mejor manera para que alguien les contacte si tienen preguntas?',
-		'field_type' => 'textarea',
-	));
+
 
 	/**
 	 * Set GV_MICROGRANTS_METADATA_DEFINED to true to avoid
