@@ -25,7 +25,7 @@ function gv_news_theme_post_footer_headlines(WP_Post $post_object) {
 		'content_css_classes' => " postfooter-headlines",
 	));
 }
-add_action('gv_theme_post_footer_end', 'gv_news_theme_post_footer_headlines');
+// add_action('gv_theme_post_footer_end', 'gv_news_theme_post_footer_headlines');
 
 
 /**
