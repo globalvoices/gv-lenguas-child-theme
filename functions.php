@@ -856,21 +856,24 @@ if (isset($gv) AND is_object($gv)) :
 //			),
 	);
 	
-	/**
-	 * Filter gv_post_archive_hide_dates to hide them on hoempage
-	 * @param type $limit
-	 * @param type $args
-	 * @return int
-	 */
-	function lenguas_gv_post_archive_hide_dates($hide_dates) {
-		if (is_home() AND !is_paged())
-			return true;
-		
-		return $hide_dates;
-	}
-	add_filter('gv_post_archive_hide_dates', 'lenguas_gv_post_archive_hide_dates', 10);
-	
 endif; // is_object($gv)
+
+/**
+ * Filter gv_post_archive_hide_dates to hide them on homepage
+ * 
+ * @param bool $hide_dates
+ * @return bool
+ */
+function lenguas_gv_post_archive_hide_dates($hide_dates) {
+	
+	if (is_home() AND !is_paged()) {
+
+		return true;
+	}
+	
+	return $hide_dates;
+}
+add_filter('gv_post_archive_hide_dates', 'lenguas_gv_post_archive_hide_dates', 10);
 
 /**
  * Filter post archive loop args to force the grid-3 format for certain taxonomy archives
