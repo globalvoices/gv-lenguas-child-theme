@@ -560,62 +560,62 @@ if (isset($gv) AND is_object($gv)) :
 	/**
 	 * Register strings specific to this site for Theme Translator
 	 */
-	function gv_news_register_theme_strings() {	
+	function gv_lenguas_register_theme_strings() {	
 		
 		/**
 		 * Region categories
 		 */
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'region_categories', 
 			'default_text' => 'Region Categories',
-			'note' => 'Labels for the custom taxonomies used by the Microgrants child theme. These are separate from the usual "topics" and "regions" of the main GV site.',
+			'note' => 'Labels for the custom taxonomies used by the Lenguas child theme. These are separate from the usual "topics" and "regions" of the main GV site.',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'region_category', 
 			'default_text' => 'Region Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'search_region_categories', 
 			'default_text' => 'Search Region Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'all_region_categories', 
 			'default_text' => 'All Region Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'parent_region_category', 
 			'default_text' => 'Parent Region Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'edit_region_category', 
 			'default_text' => 'Edit Region Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'add_region_category', 
 			'default_text' => 'Add New Region Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'new_region_category_name', 
 			'default_text' => 'New Region Category Name',
 			'note' => '',
@@ -625,56 +625,56 @@ if (isset($gv) AND is_object($gv)) :
 		 * Topic categories
 		 */
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'topic_categories', 
 			'default_text' => 'Topic Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'topic_category', 
 			'default_text' => 'Topic Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'search_topic_categories', 
 			'default_text' => 'Search Topic Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'all_topic_categories', 
 			'default_text' => 'All Topic Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'parent_topic_category', 
 			'default_text' => 'Parent Topic Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'edit_topic_category', 
 			'default_text' => 'Edit Topic Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'add_topic_category', 
 			'default_text' => 'Add New Topic Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'new_topic_category_name', 
 			'default_text' => 'New Topic Category Name',
 			'note' => '',
@@ -684,56 +684,56 @@ if (isset($gv) AND is_object($gv)) :
 		 * Language categories
 		 */
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'language_categories', 
 			'default_text' => 'Language Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'language_category', 
 			'default_text' => 'Language Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'search_language_categories', 
 			'default_text' => 'Search Language Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'all_language_categories', 
 			'default_text' => 'All Language Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'parent_language_category', 
 			'default_text' => 'Parent Language Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'edit_language_category', 
 			'default_text' => 'Edit Language Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'add_language_category', 
 			'default_text' => 'Add New Language Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'new_language_category_name', 
 			'default_text' => 'New Language Category Name',
 			'note' => '',
@@ -743,49 +743,49 @@ if (isset($gv) AND is_object($gv)) :
 		 * Tool categories
 		 */
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'tool_categories', 
 			'default_text' => 'Tool Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'tool_category', 
 			'default_text' => 'Tool Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'search_tool_categories', 
 			'default_text' => 'Search Tool Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'all_tool_categories', 
 			'default_text' => 'All Tool Categories',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'parent_tool_category', 
 			'default_text' => 'Parent Tool Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'edit_tool_category', 
 			'default_text' => 'Edit Tool Category',
 			'note' => '',
 			)
 		);
 		gv_register_theme_string(array(
-			'section' => 'Microgrants Taxonomy Labels', 
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'add_tool_category', 
 			'default_text' => 'Add New Tool Category',
 			'note' => '',
@@ -799,7 +799,7 @@ if (isset($gv) AND is_object($gv)) :
 			)
 		);
 	}
-	add_filter('after_setup_theme', 'gv_news_register_theme_strings');
+	add_filter('after_setup_theme', 'gv_lenguas_register_theme_strings');
 
 	/**
 	 * Filter the og:image (facebook/g+) default icon to be an RV logo
