@@ -923,6 +923,60 @@ function lenguas_filter_gv_display_post_terms_limit($limit, $args) {
 add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_display_post_terms_limit', 10, 2);
 
 /**
+ * Filter public taxonomies on output to hide the ones directorio posts insert in the content
+ *
+ * Makes sure we don't show lang/geo/tools twice on directorio posts
+ * 
+ * Filter ref: apply_filters('gv_get_post_public_taxonomy_terms_public_taxonomies', $public_taxonomy_definitions, $args);
+ * 
+ * @param array $public_taxonomy_definitions
+ * @param array $args 
+ * @return array
+ */
+function lenguas_filter_gv_get_post_public_taxonomy_terms_public_taxonomies_to_hide_on_directorio($public_taxonomy_definitions, $args) {
+
+	/**
+	 * Make sure we're on a single page and that we're showing the queried object
+	 */
+	if (!is_single()) {
+		return $public_taxonomy_definitions;
+	}
+	
+	if (!isset($args['post_object']) OR !is_a($args['post_object'], 'WP_Post')) {
+		return $public_taxonomy_definitions;
+	}
+	
+	if ($args['post_object']->ID != get_queried_object_id()) {
+		return $public_taxonomy_definitions;
+	}
+	
+	/**
+	 * Make sure the single post is in the 'directorio' category
+	 */
+	if (!has_term('directorio', 'category', get_queried_object())) {
+		return $public_taxonomy_definitions;
+	}
+
+	/**
+	 * Remove these taxonomies because they are automatically inserted in the post with a large display
+	 */
+	$taxonomies_to_remove = array(
+		'gv_languages',
+		'gv_geo', 
+		'gv_tools',
+	);
+
+	foreach ($public_taxonomy_definitions AS $slug => $details) {
+		if (in_array($slug, $taxonomies_to_remove)) {
+			unset($public_taxonomy_definitions[$slug]);
+		}
+	}
+
+	return $public_taxonomy_definitions;
+}
+add_filter('gv_get_post_public_taxonomy_terms_public_taxonomies', 'lenguas_filter_gv_get_post_public_taxonomy_terms_public_taxonomies_to_hide_on_directorio', 10, 2);
+
+/**
  * Filter post promo card meta to insert postmeta fields
  * 
  * ! DEACTIVATED: JUST A DEMO
