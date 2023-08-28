@@ -910,19 +910,15 @@ add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_arg
  * @param GV_Post_Archive $gv_post_archive_object For reference
  * @return void
  */
-function lenguas_filter_gv_display_post_terms_limit($limit, $args)
-{
-
-	if (!gv_is_taxonomy_archive('category', 'directorio')) {
-		return $limit;
-	}
-
+function lenguas_filter_gv_display_post_terms_limit($limit, $args) {
+	
 	// Only insert this for posts in the main loop, excluding widgets/headlines/etc.
-	if (!gv_backtrace_contains_function('gv_get_post_archive_html')) {
+	if (!gv_backtrace_contains_function('gv_display_post_promo_card')) {
 		return $limit;
 	}
 
-	return 0;
+	// We return two, hoping for one language and one country, but ultimately it will return them all based on public taxonomy order
+	return 2;
 }
 add_filter('gv_display_post_terms_limit', 'lenguas_filter_gv_display_post_terms_limit', 10, 2);
 
