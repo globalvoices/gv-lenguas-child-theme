@@ -486,38 +486,15 @@ if (isset($gv) AND is_object($gv)) :
 		 * Register "public taxonomies" for gv_taxonomies system to display automatically on posts
 		 */
 		// Unregister defaults as they aren't useful for this site
+		gv_unregister_public_taxonomy('post_tag');
+		
+		// Remove category then add it back later so it's after the lang/geo/tools taxonomies
 		gv_unregister_public_taxonomy('category');
-//		gv_unregister_public_taxonomy('post_tag');	
-		
-		/**
-		 * "Regions" taxonomy based on parentless members of gv_geo
-		 */
-		gv_register_public_taxonomy('gv_geo', array(
-			'subtaxonomy_slug' => 'region',
-			'parent' => 'none',
-			'labels' => array(
-				'name' => _lingua('regions'), 
-				'singular_name' => 'Region',
-			),
-		));
-		
-		/**
-		 * "Countries" taxonomy based on parentless members of gv_geo
-		 */
-		gv_register_public_taxonomy('gv_geo', array(
-			'subtaxonomy_slug' => 'country',
-			'grandparent' => 'none',
-			'labels' => array(
-				'name' => _lingua('countries'), 
-				'singular_name' => 'country',
-			),			
-		));
-		
-		/**
-		 * register our topics and tools taxonomies as public
-		 */
+
 		gv_register_public_taxonomy('gv_languages');
+		gv_register_public_taxonomy('gv_geo');
 		gv_register_public_taxonomy('gv_tools');
+		gv_register_public_taxonomy('category');
 	
 		/**
 		 * Filter gv_display_post_terms $before arg to remove middot 
