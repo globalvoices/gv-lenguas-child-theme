@@ -277,18 +277,18 @@ function gv_microgrants_lenguas_2023_register_postmeta_inserts() {
 
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_languages',
-		'label' => 'Lenguas',
+		'label' => _lingua('languages'),
 		'position' => 'bottom',
 	));
 
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_geo',
-		'label' => 'País',
+		'label' => _lingua('country'),
 		'position' => 'bottom',
 	));
 	gv_register_postmeta_insert(array(
 		'taxonomy' => 'gv_tools',
-		'label' => 'Herramientas digitales',
+		'label' => _lingua('digital_tools'),
 		'position' => 'bottom',
 	));
 

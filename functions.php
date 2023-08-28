@@ -544,6 +544,13 @@ if (isset($gv) AND is_object($gv)) :
 		 */
 		gv_register_theme_string(array(
 			'section' => 'Lenguas Taxonomy Labels', 
+			'string_slug' => 'country', 
+			'default_text' => 'Country',
+			'note' => '',
+			)
+		);
+		gv_register_theme_string(array(
+			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'region_categories', 
 			'default_text' => 'Region Categories',
 			'note' => 'Labels for the custom taxonomies used by the Lenguas child theme. These are separate from the usual "topics" and "regions" of the main GV site.',
@@ -720,6 +727,13 @@ if (isset($gv) AND is_object($gv)) :
 		 * Tool categories
 		 */
 		gv_register_theme_string(array(
+			'section' => 'Lenguas Taxonomy Labels', 
+			'string_slug' => 'digital_tools', 
+			'default_text' => 'Digital Tools',
+			'note' => '',
+			)
+		);
+		 gv_register_theme_string(array(
 			'section' => 'Lenguas Taxonomy Labels', 
 			'string_slug' => 'tool_categories', 
 			'default_text' => 'Tool Categories',
