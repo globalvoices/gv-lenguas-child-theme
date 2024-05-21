@@ -9,6 +9,16 @@ Template: gv-theme
 
 */
 
+#WHITE-TEXT,
+.header-nav-bar-container .header-nav-bar a,
+.header-nav-bar-container .header-nav-bar a:active,
+.header-nav-bar-container .header-nav-bar a:hover,
+.a11y-dialog-open,
+.white-text {
+	color: #fff;
+}
+
+
 /*Custom font stuff for Noto Sans JP overhaul*/
 
 /*Use Noto Sans black and make it condensed*/
@@ -56,9 +66,6 @@ h2.screen-title,
 	white-space:normal;
 	line-height:1.1;
 }
-.site-title-container {
-	max-width:480px ;
-}
 .site-title-image {
 	width: 480px;
 	max-width: 480px;
@@ -69,9 +76,6 @@ h2.screen-title,
 }
 
 @media only screen and (max-width: 1032px) {
-	.site-title-container {
-		 max-width: 360px !important;
-	}
 	.site-title-image {
 		 width: 360px;
 		 max-width: 360px;
@@ -82,15 +86,9 @@ h2.screen-title,
 	}
 }
 @media only screen and (max-width: 552px) {
-	.site-title-container {
-		max-width: 240px !important;
-	}
 	.site-title-image {
 		 width: 240px;
 		 max-width: 300px;
-	}
-	.header .site-subscribe-icons{
-		 display:none;
 	}
 }
 
@@ -134,23 +132,8 @@ a:hover,
 	background-color: #E4D5BC; /*OLD BEIGE*/
 	background-color: #B63421;
 }
-#DARK-TERRACOTTA-BACKGROUND,
-.header-container .site-search input[type='submit'],
-.dark-terracotta-background {
-	background-color: #BA3D1B; /*OLD RED*/
-	background-color: #712f00;
-}
-#DARK-TERRACOTTA-OUTLINE,
-.header-container .site-search input,
-.dark-terracotta-outline {
-	outline: 1px solid #BA3D1B; /*OLD RED*/
-	outline: 1px solid #942515;
-}
 #DARK-TERRACOTTA-HIGHLIGHT-BORDER,
-.header-container .site-search input,
-.header-menu li,
-.header-menu-container input,
-.header-tools .menu-toggle,
+.header-nav-bar li,
 .dark-terracotta-hightlight-border { 
 	border-color: #D5C5AA; /*OLD BEIGE*/
 	border-color: #942515;
@@ -159,42 +142,6 @@ a:hover,
 h3,
 .black-text {
 	color: #000;
-}
-#WHITE-TEXT,
-.header-container .header-mission-statement a,
-.header-mission-statement,
-.site-subscribe-icons a,
-.header-tools .toggle-menu.menu-closed .menu-toggle,
-/*.header-nav-bar-container .header-nav-bar a,*/
- .header-nav-bar-container .header-nav-bar a:hover,
-.white-text {
-	color: #ffffff;
-}
-
-#NO-TEXT-SHADOW,
-.header-mission-statement,
-.header-mission-statement a,
-.header-container,
-.header-nav-bar-container,
-.header-nav-bar-container a,
-.no-text-shadow {
-	/*color: #fff;*/
-text-shadow: none;
-	}
-
-#NO-TEXT-SHADOW,
-.header-container .menu-opened .toggle-menu-heading,
-.header-container .toggle-menu-content,
-.header-container .active-item a,
-.no-text-shadow {
-	text-shadow: none;
-}	
-
-#LINK-BOLDNESS, 
-.header-mission-statement a,
-.link-boldness {
-	font-weight: bold;
-	text-decoration: underline;
 }
 
 /*Imported from GV PROJECT THEME*/
