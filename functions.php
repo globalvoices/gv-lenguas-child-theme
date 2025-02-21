@@ -914,6 +914,22 @@ function lenguas_filter_gv_post_archive_loop_args(array $post_loop_args, $gv_pos
 add_filter('gv_post_archive_loop_args', 'lenguas_filter_gv_post_archive_loop_args', 10, 2);
 
 /**
+ * Filter post promo card args in card loops to hide credits and show terms instead
+ *
+ * @param array $card_args
+ * @param GV_Card_Loop_Format $format_object
+ * @return void
+ */
+function lenguas_theme_filter_card_loop_format_card_args_to_show_terms_not_credits(array $card_args, GV_Card_Loop_Format $format_object) {
+
+	$card_args['show_credits'] = false;
+	$card_args['show_terms'] = true;
+
+	return $card_args;
+}
+add_filter('gv_filter_card_loop_format_card_args', 'lenguas_theme_filter_card_loop_format_card_args_to_show_terms_not_credits', 10, 2);
+
+/**
  * Filter display post terms limit to make it unlimited for certain taxonomy archives
  *
  * Use with gv_display_post_terms_limit filter from gv_taxonomies->display_post_terms()
