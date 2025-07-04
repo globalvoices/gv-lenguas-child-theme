@@ -13,7 +13,7 @@
  * @param WP_Post $post_object
  * @return void
  */
-function gv_news_theme_post_footer_headlines(WP_Post $post_object) {
+function gv_lenguas_theme_post_footer_headlines(WP_Post $post_object) {
 	
 	if (is_page()) {
 		return;
@@ -25,7 +25,7 @@ function gv_news_theme_post_footer_headlines(WP_Post $post_object) {
 		'content_css_classes' => " postfooter-headlines",
 	));
 }
-// add_action('gv_theme_post_footer_end', 'gv_news_theme_post_footer_headlines');
+// add_action('gv_theme_post_footer_end', 'gv_lenguas_theme_post_footer_headlines');
 
 
 /**
@@ -58,7 +58,7 @@ function gv_lenguas_css_hide_credits_on_directorio_posts() {
 		return;
 	}
 
-	echo "<!--gv_lenguas_css_hide_credits_on_directorio_posts()-->\n<style>.credit, .postmeta-container .license {display:none;}</style>\n";
+	echo "<!--gv_lenguas_css_hide_credits_on_directorio_posts()-->\n<style>.avatar-credits-container, .postmeta-container .license {display:none;}</style>\n";
 }
 add_action('wp_head', 'gv_lenguas_css_hide_credits_on_directorio_posts');
 
@@ -495,6 +495,14 @@ if (isset($gv) AND is_object($gv)) :
 		gv_register_public_taxonomy('gv_geo');
 		gv_register_public_taxonomy('gv_tools');
 		gv_register_public_taxonomy('category');
+
+		/**
+		 * Register gv_special custom taxonomy as public
+		 * 
+		 * Matches gv-news-theme
+		 */
+		gv_register_public_taxonomy('gv_special');
+
 	
 		/**
 		 * Filter gv_display_post_terms $before arg to remove middot 
@@ -873,6 +881,82 @@ if (isset($gv) AND is_object($gv)) :
 endif; // is_object($gv)
 
 /**
+ * Register any full custom taxonomies
+ * 
+ * Runs on after_setup_theme:10 because of gv->get_theme_translation() timing
+ * 
+ * @see gv_custom_taxonomy->__construct() for details on the translation timing
+ * @return void
+ */
+function gv_lenguas_register_custom_taxonomies() {
+	/**
+	 * Register Special Categories taxonomy
+	 */
+	$special_topics_taxonomy = new gv_custom_taxonomy('gv_special', array('post'), array(
+		'labels' => array(
+			'name' => 'Special Categories',
+			'singular_name' => 'Special Category',
+			'search_items' => 'Search Special Categories',
+			'all_items' => 'All Special Categories',
+			'parent_item' => 'Parent Special Category',
+			'parent_item_colon' => "Parent Special Category:",
+			'edit_item' => "Edit Special Category",
+			'update_item' => "Update Special Category",
+			'add_new_item' => "Add New Special Category",
+			'new_item_name' => "New Special Category",
+			'menu_name' => "Special Categories",
+		),			
+		'public' => true,
+		'show_ui' => true,
+		// fixes http://core.trac.wordpress.org/ticket/14084
+		'update_count_callback' => '_update_post_term_count',
+		'show_admin_column' => false,
+		'hierarchical' => true,
+		'query_var' => 'special',
+		'rewrite' => array(
+			'slug' => 'special'
+		),
+		'capabilities' => array(
+			// Allow "editors" to see admin sidebar menu and edit terms
+			'manage_terms' => 'edit_users',
+			'edit_terms' => 'edit_users',
+			'delete_terms' => 'manage_options',
+			'assign_terms' => 'edit_posts',
+		),	
+	));
+	/**
+	 * Whitelist this taxonomy so that it gets sent in GV_REST_Extension
+	 * 
+	 * Reference:
+	 * 	return apply_filters('gv_taxonomy_whitelist', array('category', 'post_tag'));
+	 */
+	function gv_filter_gv_taxonomy_whitelist_to_add_gv_special($taxonomies) {
+		$taxonomies[] = 'gv_special';
+		return $taxonomies;
+	}
+	add_filter('gv_taxonomy_whitelist', 'gv_filter_gv_taxonomy_whitelist_to_add_gv_special');
+
+	/**
+	 * Always disable featured posts for gv_special taxonomy archives
+	 * 
+	 * Filters `gv_load_featured_posts` which controls display of the featured posts 
+	 * 
+	 * @param bool $bool Whether featured posts display on the current page
+	 * @return void
+	 */
+	function gv_theme_special_categories_disable_featured_posts($bool) {
+
+		if (gv_is_taxonomy_archive('gv_special')) {
+			return false;
+		}
+		return $bool;
+	}
+	// add_filter('gv_load_featured_posts', 'gv_theme_special_categories_disable_featured_posts');
+	 
+}
+add_action('after_setup_theme', 'gv_lenguas_register_custom_taxonomies');
+
+/**
  * Filter gv_post_archive_hide_dates to hide them on homepage
  * 
  * @param bool $hide_dates
@@ -1005,36 +1089,3 @@ function lenguas_filter_gv_get_post_public_taxonomy_terms_public_taxonomies_to_h
 	return $public_taxonomy_definitions;
 }
 add_filter('gv_get_post_public_taxonomy_terms_public_taxonomies', 'lenguas_filter_gv_get_post_public_taxonomy_terms_public_taxonomies_to_hide_on_directorio', 10, 2);
-
-/**
- * Filter post promo card meta to insert postmeta fields
- * 
- * ! DEACTIVATED: JUST A DEMO
- * 
- * Use with gv_post_promo_card_meta_start filter from GV_Promo_Card_Post->get_text()
- * e.g.:
- * 	add_filter('gv_post_promo_card_meta_start', 'gv_filter_post_promo_card_meta_start_to_insert_custom_fields', 10, 2);
- * 
- * @param string $output Meta output so far (from other filters)
- * @param WP_Post $post
- * @return string
- */
-function gv_filter_post_promo_card_meta_start_to_insert_custom_fields(string $output, WP_Post $post) {
-
-	// Only insert this for posts in the main loop, excluding widgets/headlines/etc.
-	if (!gv_backtrace_contains_function('gv_get_post_archive_html')) {
-		return $output;
-	}
-
-	// Example content to insert: Tagline
-	$custom_field_output = gv_display_post_tagline($post, array(
-		'echo' => false,
-	));
-
-	if ($custom_field_output) {
-		$output = $output . $custom_field_output;
-	}
-
-	return $output;
-}
-// add_filter('gv_post_promo_card_meta_start', 'gv_filter_post_promo_card_meta_start_to_insert_custom_fields', 10, 2);
