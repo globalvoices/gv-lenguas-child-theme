@@ -59,7 +59,6 @@ h2.screen-title,
 	line-height: 20px;
 	line-height: 1.25rem;
 }
-
 .wpcf7-textarea {width: 90%;}
 
 .site-title-text {
@@ -67,8 +66,8 @@ h2.screen-title,
 	line-height:1.1;
 }
 .site-title-image {
-	width: 480px;
-	max-width: 480px;
+	width: 400px;
+	max-width: 400px;
 }
 /*Full-width widget with no heading*/
 .homepage_intro-container {
@@ -102,7 +101,8 @@ h3 a,
 #comments #respond #commentform a:hover,
 .warning a
 .terracotta-text {
-	color: #c1250e; /*terracotta*/
+	/* Disable link color so it uses root theme like RV */
+	/*color: #c1250e;*/ /*terracotta*/
 }
 #LIGHT-TERRACOTTA-TEXT,
 #page-navigation a,
@@ -117,18 +117,19 @@ a:hover,
 #cancel-comment-reply-link:hover,
 .warning a:hover
 .light-terracotta-text {
-	color: #ef290c; /*terracotta*/
+	/*terracotta*/
+	/* color: #ef290c;  */
 	}
 #TERRACOTTA-BACKGROUND,
 .header-container,
 .header-nav-bar-container,
 .terracotta-background {
-	background-color: #B63421;
+	background-color: #388CE0; /*Darker large-text a11y dodger blue*/
 }
 #DARK-TERRACOTTA-HIGHLIGHT-BORDER,
 .header-nav-bar li,
 .dark-terracotta-hightlight-border { 
-	border-color: #942515;
+	border-color: #1c6fc1; /*Darker Dodger Blue Highlight*/
 }
 #BLACK-TEXT,
 h3,
